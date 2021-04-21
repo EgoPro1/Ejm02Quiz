@@ -63,5 +63,35 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context,DATABASE_
         return correcto
         //  return list
     }
+    fun readAllData():ArrayList<User> /*: MutableList<User>*/ {
+        var users =ArrayList<User>()
+
+        val db = this.readableDatabase
+        var correcto = false
+        val query = "Select " + COL_NAME + "," + COL_PASSWORD + " from " + TABLE_NAME
+        val result = db.rawQuery(query, null)
+        if (result.moveToFirst()) {
+            do {
+                users.add(User(result.getString(result.getColumnIndex(COL_ID)).toInt(),result.getString(result.getColumnIndex(COL_NAME)),result.getString(result.getColumnIndex(COL_PASSWORD))))
+            }while (result.moveToNext())
+        }
+        result.close()
+        db.close()
+        return users
+        //  return list
+    }
+    fun readCount(): Int /*: MutableList<User>*/ {
+        val db = this.readableDatabase
+        var count=0
+        val query = "Select " + COL_NAME + "," + COL_PASSWORD + " from " + TABLE_NAME
+        val result = db.rawQuery(query, null)
+        if (result.moveToFirst()) {
+            count++
+        }
+        result.close()
+        db.close()
+        return count
+        //  return list
+    }
 }
 

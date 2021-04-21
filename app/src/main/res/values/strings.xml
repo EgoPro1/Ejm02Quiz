@@ -1,7 +1,47 @@
 <resources>
-    <string name="app_name">Ejm02</string>
+    <string name="app_name">Quiz</string>
     <string name="register">Register</string>
     <string name="usuario">Usuario</string>
     <string name="contrase_a">Contraseña</string>
     <string name="confirmar_contrase_a">Confirmar contraseña</string>
+
+    <string name="question_number">1/5 Question</string>
+    <string name="score">Score 0/5</string>
+
+    <string name="tvQuestion1">¿En qué año se fundo la UPC?</string>
+    <string name="tvQuestion_1A">1990</string>
+    <string name="tvQuestion_1B">1993</string>
+    <string name="tvQuestion_1C">1995</string>
+    <string name="tvQuestion_1D">1994</string>
+    <string name="tvAnswer_1">1994</string>
+
+
+    <string name="tvQuestion2">¿Quien es el Rector de la Upc</string>
+    <string name="tvQuestion_2A">Rosario Villalta</string>
+    <string name="tvQuestion_2B">Edward Roekaert Embrechts</string>
+    <string name="tvQuestion_2C">Marcos Medina</string>
+    <string name="tvQuestion_2D">Luis Vives Garnique</string>
+    <string name="tvAnswer_2">Edward Roekaert Embrechts</string>
+
+    <string name="tvQuestion3">¿Cual es la capital de Lima?</string>
+    <string name="tvQuestion_3A">Lima</string>
+    <string name="tvQuestion_3B">Arequipa</string>
+    <string name="tvQuestion_3C">Junin</string>
+    <string name="tvQuestion_3D">Ninguna</string>
+    <string name="tvAnswer_3">Lima</string>
+
+    <string name="tvQuestion4">¿Que significa UPC?</string>
+    <string name="tvQuestion_4A">Universidad Privada de Ciencias Aplicadas</string>
+    <string name="tvQuestion_4B">Universidad Pedro Castillo</string>
+    <string name="tvQuestion_4C">Universidad Peruana de Ciencias Aplicadas</string>
+    <string name="tvQuestion_4D">Universidad Piurana de Cursos Antiguos</string>
+    <string name="tvAnswer_4">Universidad Peruana de Ciencias Aplicadas</string>
+
+    <string name="tvQuestion5">¿Cuanta nota merece este proyecto?</string>
+    <string name="tvQuestion_5A">20</string>
+    <string name="tvQuestion_5B">19,9</string>
+    <string name="tvQuestion_5C">19</string>
+    <string name="tvQuestion_5D">21</string>
+    <string name="tvAnswer_5">21</string>
+
 </resources>

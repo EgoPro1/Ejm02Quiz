@@ -33,10 +33,17 @@ class LoginActivity : AppCompatActivity() {
             }
         }}
 
+        btRegistroU.setOnClickListener{
+            var intent = Intent(this,ShowUsersActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun Registrar(view: View){
         val intent= Intent(this,RegisterActivity::class.java)
         startActivity(intent)
+    }
+    fun mostrar(view: View){
+        Toast.makeText(this, R.string.tvQuestion1, Toast.LENGTH_SHORT).show()
     }
 }

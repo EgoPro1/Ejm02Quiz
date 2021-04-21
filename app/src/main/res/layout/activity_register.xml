@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="#FF9800"
     tools:context=".RegisterActivity">
 
     <TextView
@@ -12,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register"
-        android:textSize="50sp"
+        android:textSize="80sp"
+        android:textColor="#FFE504"
+        android:fontFamily="@font/dayslater28"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColorHint="#FFEB3B"
         android:hint="@string/usuario"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColorHint="#FFEB3B"
         android:hint="@string/contrase_a"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,6 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColorHint="#FFEB3B"
         android:hint="@string/confirmar_contrase_a"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +68,8 @@
         android:id="@+id/btConfirmar"
         android:layout_width="140dp"
         android:layout_height="49dp"
-        android:background="#A0E0FD"
+        android:textColor="#FF9800"
+        android:background="#FFE504"
         android:text="Confirmar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

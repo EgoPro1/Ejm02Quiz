@@ -10,7 +10,11 @@ class User{
         this.name = name
         this.password = password
     }
-
+    constructor(id:Int ,name: String, password: String){
+        this.name = name
+        this.password = password
+        this.id = id
+    }
     constructor(){
     }
 
