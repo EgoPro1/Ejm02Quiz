@@ -6,13 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DataAdapter(Users: ArrayList<User>) : RecyclerView.Adapter<DataAdapter.ViewHolderData>()
+class DataAdapter(val users: ArrayList<User>) : RecyclerView.Adapter<DataAdapter.ViewHolderData>()
 {
-    var users = Users
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderData {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
 
         var view=LayoutInflater.from(parent.context).inflate(R.layout.useritem_list,null,false)
 

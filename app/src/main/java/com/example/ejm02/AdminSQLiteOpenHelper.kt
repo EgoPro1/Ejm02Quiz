@@ -68,11 +68,11 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context,DATABASE_
 
         val db = this.readableDatabase
         var correcto = false
-        val query = "Select " + COL_NAME + "," + COL_PASSWORD + " from " + TABLE_NAME
+        val query = "Select " + COL_ID+ ","+COL_NAME + "," + COL_PASSWORD + " from " + TABLE_NAME
         val result = db.rawQuery(query, null)
         if (result.moveToFirst()) {
             do {
-                users.add(User(result.getString(result.getColumnIndex(COL_ID)).toInt(),result.getString(result.getColumnIndex(COL_NAME)),result.getString(result.getColumnIndex(COL_PASSWORD))))
+                users.add(User(result.getString(result.getColumnIndex(COL_ID)).toInt(),result.getString(result.getColumnIndex(COL_NAME)),result.getString(result.getColumnIndex(COL_NAME))))
             }while (result.moveToNext())
         }
         result.close()
