@@ -6,6 +6,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
     var currentOptionB=0
     var currentOptionC=0
     var currentOptionD=0
-
+    val context = this
+    var db = DataBaseHandler(context)
 
 
     val PROGRESS_BAR=20
@@ -53,24 +55,24 @@ class MainActivity : AppCompatActivity() {
 
 
         tvQA.setOnClickListener{
-            checkAnswer(currentOptionA,0)
 
+            color(0,   checkAnswer(currentOptionA))
 
         }
         tvQB.setOnClickListener{
-            checkAnswer(currentOptionB,1)
 
+            color(1, checkAnswer(currentOptionB))
 
         }
 
         tvQC.setOnClickListener{
-            checkAnswer(currentOptionC,2)
 
+            color(2, checkAnswer(currentOptionC))
 
         }
 
         tvQD.setOnClickListener{
-            checkAnswer(currentOptionD,3)
+            color(3,checkAnswer(currentOptionD))
 
 
         }
@@ -84,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
         //    setupViews()
     }
-    private fun checkAnswer( userSelection: Int, color:Int) {
+    private fun checkAnswer( userSelection: Int):Boolean{
         var musica = MediaPlayer.create(getApplicationContext(),R.raw.correctding);
         var musica2 = MediaPlayer.create(getApplicationContext(),R.raw.incorrectobocina);
 
@@ -99,52 +101,83 @@ class MainActivity : AppCompatActivity() {
         if(selected==correct){
             Toast.makeText(this,"Rigth",Toast.LENGTH_SHORT).show()
             musica.start()
-            color(color)
+
+
             score++
+            return true
         }else{
             musica2.start()
-
             Toast.makeText(this,"Wrong",Toast.LENGTH_SHORT).show()
+            return false
         }
 
 
 
     }
 
-    private fun color(color: Int){
-        if(color==0){
+    private fun color(color: Int,correcto:Boolean){
+        if(color==0&&correcto){
             tvQA.setBackgroundResource(R.color.rigth)
             tvQB.setBackgroundResource(R.color.wrong)
             tvQC.setBackgroundResource(R.color.wrong)
             tvQD.setBackgroundResource(R.color.wrong)
         }
-        if(color==1){
+        if(color==0&&!correcto){
+            tvQA.setBackgroundResource(R.color.wrong)
+
+        }
+
+
+
+        if(color==1&&correcto){
             tvQB.setBackgroundResource(R.color.rigth)
             tvQA.setBackgroundResource(R.color.wrong)
             tvQC.setBackgroundResource(R.color.wrong)
             tvQD.setBackgroundResource(R.color.wrong)
         }
-        if(color==2){
+        if(color==1&&!correcto){
+            tvQB.setBackgroundResource(R.color.wrong)
+
+        }
+
+
+
+        if(color==2&&correcto){
             tvQC.setBackgroundResource(R.color.rigth)
             tvQB.setBackgroundResource(R.color.wrong)
             tvQA.setBackgroundResource(R.color.wrong)
             tvQD.setBackgroundResource(R.color.wrong)
         }
-        if(color==3){
+        if(color==2&&!correcto){
+            tvQC.setBackgroundResource(R.color.wrong)
+
+        }
+
+
+
+        if(color==3&&correcto){
             tvQD.setBackgroundResource(R.color.rigth)
             tvQB.setBackgroundResource(R.color.wrong)
             tvQC.setBackgroundResource(R.color.wrong)
             tvQA.setBackgroundResource(R.color.wrong)
         }
+        if(color==3&&!correcto){
+            tvQD.setBackgroundResource(R.color.wrong)
+
+        }
+
 
     }
 
     fun updateQuestion() {
-
+        var musica3 = MediaPlayer.create(getApplicationContext(),R.raw.gameover);
         position=(position+1)%Questions.size
 
         if(position==0){
-           val alert= Builder(this)
+            var username=intent.getStringExtra("Username");
+
+            Log.d("Adding user", position.toString())
+            val alert= AlertDialog.Builder(this)
             alert.setTitle("Game Over");
             alert.setCancelable(false)
             alert.setMessage("Your score: " + score+" points")
@@ -159,6 +192,11 @@ class MainActivity : AppCompatActivity() {
 
             })
 
+            // Set other dialog properties
+
+            alert.show()
+            db.updateScore(username.toString(),score)
+            musica3.start()
         }
 
         currentquestion=Questions[position].questionid

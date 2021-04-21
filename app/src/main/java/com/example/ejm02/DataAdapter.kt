@@ -33,6 +33,7 @@ class DataAdapter(val users: ArrayList<User>) : RecyclerView.Adapter<DataAdapter
             dato.text="ID: "+user.id.toString()
             dato1.text="Username: "+user.name
             dato2.text="Password: "+user.password
+            dato3.text="Score: "+user.score
 
         }
 
@@ -40,6 +41,7 @@ class DataAdapter(val users: ArrayList<User>) : RecyclerView.Adapter<DataAdapter
         var dato=itemView.findViewById<TextView>(R.id.tv_useriditem)
         var dato1=itemView.findViewById<TextView>(R.id.tv_useritem)
         var dato2=itemView.findViewById<TextView>(R.id.tv_userpassitem)
+        var dato3=itemView.findViewById<TextView>(R.id.tv_userscoreitem)
 
 
     }

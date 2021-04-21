@@ -26,7 +26,10 @@ class LoginActivity : AppCompatActivity() {
             var data = db.readData(user)
             if (data == true) {
                 Toast.makeText(this, "Logged", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java).apply {
+                    putExtra("Username",user.name)
+
+                }
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Incorrect Data", Toast.LENGTH_SHORT).show()
