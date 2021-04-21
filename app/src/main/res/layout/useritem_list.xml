@@ -4,9 +4,34 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_useritem"
+        android:id="@+id/tv_useriditem"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textColor="#FF5722"
+        android:fontFamily="@font/dayslater28"
+        android:text="mesaje"></TextView>
+
+    <TextView
+        android:id="@+id/tv_useritem"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textColor="#FF5722"
+        android:fontFamily="@font/dayslater28"
+        android:text="mesaje"></TextView>
+    <TextView
+        android:id="@+id/tv_userpassitem"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textColor="#FF5722"
+        android:fontFamily="@font/dayslater28"
         android:text="mesaje"></TextView>
 
 

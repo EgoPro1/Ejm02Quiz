@@ -20,7 +20,7 @@ class ShowUsersActivity : AppCompatActivity() {
         setContentView(R.layout.activity_show_users)
         var Rv=findViewById<RecyclerView>(R.id.Rv_users)
 
-            Rv.layoutManager=LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+            Rv.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
             var adapter=DataAdapter(db.readAllData())
             Rv.adapter=adapter
 

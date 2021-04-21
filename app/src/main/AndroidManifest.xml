@@ -11,6 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ShowUsersActivity"
             android:parentActivityName=".LoginActivity"
+            android:label="Users"
+
             ></activity>
         <activity
             android:name=".IntroActivity"

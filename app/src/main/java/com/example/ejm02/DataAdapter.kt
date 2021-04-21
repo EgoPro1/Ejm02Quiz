@@ -1,5 +1,6 @@
 package com.example.ejm02
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,11 +30,16 @@ class DataAdapter(val users: ArrayList<User>) : RecyclerView.Adapter<DataAdapter
 
     class ViewHolderData(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun assigndata(user: User) {
-            dato.text=user.name
+            dato.text="ID: "+user.id.toString()
+            dato1.text="Username: "+user.name
+            dato2.text="Password: "+user.password
+
         }
 
 
-        var dato=itemView.findViewById<TextView>(R.id.tv_useritem)
+        var dato=itemView.findViewById<TextView>(R.id.tv_useriditem)
+        var dato1=itemView.findViewById<TextView>(R.id.tv_useritem)
+        var dato2=itemView.findViewById<TextView>(R.id.tv_userpassitem)
 
 
     }
